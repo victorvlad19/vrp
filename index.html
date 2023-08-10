@@ -5,10 +5,10 @@
     <title>Virtual Piano</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
-    <script src="https://rawgit.com/caseyyee/aframe-ui-widgets/master/dist/ui-widgets.min.js"></script>
+    <script src="https://rawgit.com/caseyyee/aframe-ui-widgets/master/dist/aframe-ui-widgets.min.js"></script>
 </head>
 <body>
-    <a-scene>
+    <a-scene debug stats="false">
 
         <a-assets>
             <a-asset-item id="piano" src="piano.gltf"></a-asset-item>
@@ -21,16 +21,15 @@
             <audio id="B" src="https://archive.org/download/SynthesizedPianoNotes/Piano112.mp3"></audio>
         </a-assets>
 
+        <a-entity id="buttonStd" ui-button position="-0.146 1.35832 -0.266" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
 <!--        <a-box position="0 1.33413 -0.03767" rotation="45 0 0" scale="1.32 0.02 0.65" color="#4CC3D9"></a-box>-->
-
-        <a-box ui-button color="white"  position="-0.25955 1.36038 -0.52486"  scale="0.04 0.05 0.62" sound="src: #C; on: click">
+        <a-box id="buttonStd" color="white"  position="-0.25955 1.36038 -0.52486"  scale="0.04 0.05 0.62" sound="src: #C; on: click">
             <a-animation attribute="color" begin="mouseenter" dur="300" from="grey" to="white"></a-animation>
             <a-animation attribute="color" begin="mouseleave" dur="300" from="white" to="grey"></a-animation>
             <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.1 2.1 4.1"></a-animation>
             <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 4"></a-animation>
             <a-animation attribute="position" begin="click" dur="300" direction="alternate" repeat=1 to="-6.3 -2.5 -5"></a-animation>
         </a-box>
-
         <a-entity gltf-model="#piano" position="0 0.751 -0.80793" rotation="270 0 0" scale="0.3 0.51 0.73"></a-entity>
 
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
@@ -42,10 +41,22 @@
         <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
         <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
 
-        <a-camera>
+        <a-camera mouse-cursor wasd-controls>
             <a-cursor></a-cursor>
         </a-camera>
 
     </a-scene>
+
+    <script>
+        var buttonStd = document.querySelector('#buttonStd');
+        buttonStd.addEventListener('pressed', function() {
+            debugger;
+            var randomHexColor = Math.floor(Math.random() * 0xffffff).toString(16);
+            targetEntity.setAttribute('material', {
+                color: '#' + randomHexColor
+            });
+        });
+    </script>
+
 </body>
 </html>
