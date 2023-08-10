@@ -6,6 +6,7 @@
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
     <script src="https://rawgit.com/caseyyee/aframe-ui-widgets/master/dist/aframe-ui-widgets.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
 </head>
 <body>
     <a-scene debug stats="false">
@@ -23,7 +24,7 @@
 
         <a-entity id="buttonStd" ui-button position="-0.146 1.358 -0.8" rotation="45 0 0" scale="0.3 0.3 0.3"></a-entity>
 <!--        <a-box position="0 1.33413 -0.03767" rotation="45 0 0" scale="1.32 0.02 0.65" color="#4CC3D9"></a-box>-->
-        <a-box id="buttonStd" color="white"  position="-0.25955 1.36038 -1"  scale="0.04 0.05 0.62" sound="src: #C; on: click">
+        <a-box hoverable id="buttonStd" color="white"  position="-0.25955 1.36038 -1"  scale="0.04 0.05 0.62" sound="src: #C; on: click">
             <a-animation attribute="color" begin="mouseenter" dur="300" from="grey" to="white"></a-animation>
             <a-animation attribute="color" begin="mouseleave" dur="300" from="white" to="grey"></a-animation>
             <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.1 2.1 4.1"></a-animation>
@@ -38,8 +39,8 @@
 
 
         <a-entity environment="preset: forest;"></a-entity>
-        <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
-        <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
+        <a-entity id="leftHand" sphere-collider="objects: a-box" super-hands hand-tracking-controls="hand: left;"></a-entity>
+        <a-entity id="rightHand" sphere-collider="objects: a-box" super-hands hand-tracking-controls="hand: right;"></a-entity>
 
         <a-camera mouse-cursor wasd-controls>
             <a-cursor></a-cursor>
