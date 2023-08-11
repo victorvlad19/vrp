@@ -6,7 +6,6 @@ AFRAME.registerComponent('button', {
     },
     init: function () {
         var el = this.el;
-        var labelEl = this.labelEl = document.createElement('a-entity');
 
         this.color = '#3a50c5';
         el.setAttribute('geometry', {
@@ -19,15 +18,7 @@ AFRAME.registerComponent('button', {
         el.setAttribute('material', {color: this.color});
         el.setAttribute('pressable', '');
 
-        labelEl.setAttribute('position', '0 0 0.02');
-        labelEl.setAttribute('text', {
-            value: this.data.label,
-            color: 'white',
-            align: 'center'
-        });
 
-        labelEl.setAttribute('scale', '0.75 0.75 0.75');
-        this.el.appendChild(labelEl);
 
         this.bindMethods();
         this.el.addEventListener('stateadded', this.stateChanged);
@@ -40,12 +31,6 @@ AFRAME.registerComponent('button', {
         this.stateChanged = this.stateChanged.bind(this);
         this.onPressedStarted = this.onPressedStarted.bind(this);
         this.onPressedEnded = this.onPressedEnded.bind(this);
-    },
-
-    update: function (oldData) {
-        if (oldData.label !== this.data.label) {
-            this.labelEl.setAttribute('text', 'value', this.data.label);
-        }
     },
 
     stateChanged: function () {
