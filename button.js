@@ -1,7 +1,7 @@
 AFRAME.registerComponent('button', {
     schema: {
         label: {default: 'label'},
-        width: {default: 0.06},
+        width: {default: 0.03},
         toggable: {default: false}
     },
     init: function () {
@@ -11,7 +11,7 @@ AFRAME.registerComponent('button', {
         el.setAttribute('geometry', {
             primitive: 'box',
             width: this.data.width,
-            height: 0.20,
+            height: 0.10,
             depth: 0.04
         });
 
