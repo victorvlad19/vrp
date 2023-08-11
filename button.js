@@ -1,12 +1,13 @@
 AFRAME.registerComponent('button', {
     schema: {
-        label: {default: 'label'},
+        label: {default: ''},
         width: {default: 0.03},
         color: {default: "#ffffff"},
         toggable: {default: false}
     },
     init: function () {
         var el = this.el;
+        var labelEl = this.labelEl = document.createElement('a-entity');
 
         this.color = this.data.color;
         el.setAttribute('geometry', {
@@ -18,6 +19,19 @@ AFRAME.registerComponent('button', {
 
         el.setAttribute('material', {color: this.color});
         el.setAttribute('pressable', '');
+
+        let mycolor = "black";
+        if (this.data.color === "#000000") mycolor = "white"
+
+        labelEl.setAttribute('position', '0 0 0.02');
+        labelEl.setAttribute('text', {
+            value: this.data.label,
+            color: mycolor,
+            align: 'center'
+        });
+
+        labelEl.setAttribute('scale', '0.35 0.35 0.35');
+        this.el.appendChild(labelEl);
 
         this.bindMethods();
         this.el.addEventListener('stateadded', this.stateChanged);
