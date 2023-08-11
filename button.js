@@ -2,12 +2,13 @@ AFRAME.registerComponent('button', {
     schema: {
         label: {default: 'label'},
         width: {default: 0.03},
+        color: {default: "#ffffff"},
         toggable: {default: false}
     },
     init: function () {
         var el = this.el;
 
-        this.color = '#ffffff';
+        this.color = this.data.color;
         el.setAttribute('geometry', {
             primitive: 'box',
             width: this.data.width,

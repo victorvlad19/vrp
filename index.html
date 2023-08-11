@@ -31,7 +31,6 @@
             <audio id="A4_Song" src="notes/A4.mp3"></audio>
             <audio id="B4_Song" src="notes/B4.mp3"></audio>
             <audio id="C4_Song" src="notes/C4.mp3"></audio>
-
         </a-assets>
 
         <a-entity id="buttonStd" ui-button position="-0.146 1.358 -0.8" rotation="45 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -46,29 +45,30 @@
 <!--        <a-entity gltf-model="#piano" position="0 0.751 -0.80793" rotation="270 0 0" scale="0.3 0.51 0.73"></a-entity>-->
 
         <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" >
-            <a-entity id="C2" button sound="src: #C2_Song; on: click" sound="src: #C2_Song; on: click" button position="-0.42 0 0"></a-entity>
-            <a-entity id="D2" button sound="src: #D2_Song; on: click" sound="src: #D2_Song; on: click" button position="-0.36 0 0"></a-entity>
-            <a-entity id="E2" button sound="src: #E2_Song; on: click" sound="src: #E2_Song; on: click" button position="-0.30 0 0"></a-entity>
-            <a-entity id="F2" button sound="src: #F2_Song; on: click" sound="src: #F2_Song; on: click" button position="-0.24 0 0"></a-entity>
-            <a-entity id="G2" button sound="src: #G2_Song; on: click" sound="src: #G2_Song; on: click" button position="-0.18 0 0"></a-entity>
-            <a-entity id="A3" button sound="src: #A3_Song; on: click" button position="-0.12 0 0"></a-entity>
-            <a-entity id="B3" button sound="src: #B3_Song; on: click" button sound="src: #C3_Song; on: click" position="-0.06 0 0"></a-entity>
-            <a-entity id="C3" button sound="src: #C3_Song; on: click" position="0 0 0"></a-entity>
-            <a-entity id="D3" button sound="src: #D3_Song; on: click" position="0.06 0 0"></a-entity>
-            <a-entity id="E3" button sound="src: #E3_Song; on: click" position="0.12 0 0"></a-entity>
-            <a-entity id="F3" button sound="src: #F3_Song; on: click" position="0.18 0 0"></a-entity>
-            <a-entity id="G3" button sound="src: #G3_Song; on: click" position="0.24 0 0"></a-entity>
-            <a-entity id="A4" button sound="src: #A4_Song; on: click" button position="0.30 0 0"></a-entity>
-            <a-entity id="B4" button sound="src: #B4_Song; on: click" button position="0.36 0 0"></a-entity>
-            <a-entity id="C4" button sound="src: #C4_Song; on: click" button position="0.42 0 0"></a-entity>
+            <a-entity id="C2" button sound="src: #C2_Song; on: click" sound="src: #C2_Song; on: click" button position="-0.42 -0.06 0"></a-entity>
+            <a-entity id="D2" button sound="src: #D2_Song; on: click" sound="src: #D2_Song; on: click" button position="-0.36 -0.06 0"></a-entity>
+            <a-entity id="E2" button sound="src: #E2_Song; on: click" sound="src: #E2_Song; on: click" button position="-0.30 -0.06 0"></a-entity>
+            <a-entity id="F2" button sound="src: #F2_Song; on: click" sound="src: #F2_Song; on: click" button position="-0.24 -0.06 0"></a-entity>
+            <a-entity id="G2" button sound="src: #G2_Song; on: click" sound="src: #G2_Song; on: click" button position="-0.18 -0.06 0"></a-entity>
+            <a-entity id="A3" button sound="src: #A3_Song; on: click" button position="-0.12 -0.06 0"></a-entity>
+            <a-entity id="B3" button sound="src: #B3_Song; on: click" button sound="src: #C3_Song; on: click" position="-0.06 -0.06 0"></a-entity>
+            <a-entity id="C3" button sound="src: #C3_Song; on: click" position="0 -0.06 0"></a-entity>
+            <a-entity id="D3" button sound="src: #D3_Song; on: click" position="0.06 -0.06 0"></a-entity>
+            <a-entity id="E3" button sound="src: #E3_Song; on: click" position="0.12 -0.06 0"></a-entity>
+            <a-entity id="F3" button sound="src: #F3_Song; on: click" position="0.18 -0.06 0"></a-entity>
+            <a-entity id="G3" button sound="src: #G3_Song; on: click" position="0.24 -0.06 0"></a-entity>
+            <a-entity id="A4" button sound="src: #A4_Song; on: click" button position="0.30 -0.06 0"></a-entity>
+            <a-entity id="B4" button sound="src: #B4_Song; on: click" button position="0.36 -0.06 0"></a-entity>
+            <a-entity id="C4" button sound="src: #C4_Song; on: click" button position="0.42 -0.06 0"></a-entity>
+            <a-entity id="C4" button="color: #000000" sound="src: #C4_Song; on: click" button position="-0.39 0.06 0"></a-entity>
+            <a-entity id="C4" button="color: #000000" sound="src: #C4_Song; on: click" button position="-0.33 0.06 0"></a-entity>
+
         </a-entity>
 
 
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-
-
 
         <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
         <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
