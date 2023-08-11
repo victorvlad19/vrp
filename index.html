@@ -43,10 +43,13 @@
             <audio id="Ab4_Song" src="notes/Ab4.mp3"></audio>
             <audio id="Bb4_Song" src="notes/Bb4.mp3"></audio>
 
+            <img id="song" src="song.png">
         </a-assets>
 
 
        <a-entity gltf-model="#piano" position="-0.01 0.814 -1.087" rotation="270 0 0" scale="0.48 0.49 0.7"></a-entity>
+
+        <a-image src="#song" rotation="0 0 0" position="0.03154 1.70205 -0.65439" scale="0.2 0.2 0.2"></a-image>
 
         <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" >
 <!--        White-->
@@ -80,8 +83,6 @@
 
 
         <a-box position="-0.01681 0.3461 -1.13447" scale="1.18 0.97 1.97" rotation="0 0 0" color="gray"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
         <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
         <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
