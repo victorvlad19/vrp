@@ -1,24 +1,22 @@
 AFRAME.registerComponent('button', {
     schema: {
         label: {default: 'label'},
-        width: {default: 0.11},
+        width: {default: 0.06},
         toggable: {default: false}
     },
     init: function () {
         var el = this.el;
 
-        this.color = '#3a50c5';
+        this.color = '#ffffff';
         el.setAttribute('geometry', {
             primitive: 'box',
             width: this.data.width,
-            height: 0.05,
+            height: 0.20,
             depth: 0.04
         });
 
         el.setAttribute('material', {color: this.color});
         el.setAttribute('pressable', '');
-
-
 
         this.bindMethods();
         this.el.addEventListener('stateadded', this.stateChanged);
