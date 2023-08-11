@@ -17,16 +17,16 @@ AFRAME.registerComponent('event-manager', {
     onClick: function (evt) {
         let targetEl = evt.target;
 
-        if (targetEl === this.C3) {
-
-            if (!playing) {
-                this.C3_Song.components.sound.playSound();
-            } else {
-                this.C3_Song.components.sound.pauseSound();
-                this.C3_Song.currentTime = 0;
-            }
-            playing = !playing
-        }
+        // if (targetEl === this.C3) {
+        //
+        //     if (!playing) {
+        //         this.C3_Song.components.sound.playSound();
+        //     } else {
+        //         this.C3_Song.components.sound.pauseSound();
+        //         this.C3_Song.currentTime = 0;
+        //     }
+        //     playing = !playing
+        // }
     }
 
 });
